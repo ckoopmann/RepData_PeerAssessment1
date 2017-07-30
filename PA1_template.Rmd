@@ -7,7 +7,7 @@ output:
 
 
 ```{r setup, echo = FALSE}
-knitr::opts_chunk$set(echo = TRUE, fig.path = "figures")
+knitr::opts_chunk$set(echo = TRUE, fig.path = "figures/", dev = 'png')
 ```
 
 ## Loading and preprocessing the data

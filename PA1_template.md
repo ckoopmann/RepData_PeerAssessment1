@@ -32,7 +32,7 @@ daily_steps = dt[,.(DailySum = sum(steps, na.rm = TRUE)), by = date]
 hist(daily_steps$DailySum, breaks = 10)
 ```
 
-![](figuresdaily_steps-1.png)<!-- -->
+![](figures/daily_steps-1.png)<!-- -->
 
 ```r
 mean(daily_steps$DailySum, na.rm = TRUE)
@@ -59,7 +59,7 @@ interval_means = dt[,.(IntervalMean= mean(steps, na.rm = TRUE)), by = interval]
 plot(x = interval_means$interval, y = interval_means$IntervalMean, type = 'l')
 ```
 
-![](figuresactivity_pattern-1.png)<!-- -->
+![](figures/activity_pattern-1.png)<!-- -->
 
 ```r
 interval_means[which.max(IntervalMean)]
@@ -100,7 +100,7 @@ daily_steps = dt_replaced[,.(DailySum = sum(steps, na.rm = TRUE)), by = date]
 hist(daily_steps$DailySum, breaks = 10)
 ```
 
-![](figuresmissing_values_analysis-1.png)<!-- -->
+![](figures/missing_values_analysis-1.png)<!-- -->
 
 ```r
 mean(daily_steps$DailySum, na.rm = TRUE)
@@ -137,5 +137,5 @@ interval_means = rbind(interval_means_weekend, interval_means_weekday)
 ggplot(data = interval_means, aes(x = interval, y = IntervalMean)) + geom_line() + facet_grid(type ~.)
 ```
 
-![](figuresweekday_analysis-1.png)<!-- -->
+![](figures/weekday_analysis-1.png)<!-- -->
 One can see a difference with more activity in the morning hours on weekdays, maybe because of the morning commute.
